@@ -1,20 +1,20 @@
 "use client";
-import { TContact } from "../api/contact/route";
-import { useContact } from "../[hook]/getContact";
+// import { TContact } from "../api/contact/route";
+// import { useContact } from "../[hook]/getContact";
 
 export default function Page() {
-  const { contactList } = useContact();
+  // const { contactList } = useContact();
 
-  console.log("contactList", contactList);
+  // console.log("contactList", contactList);
 
-  const handleConfirm = () => {
-    const confirm = window.confirm("메일을 보내시겠습니까?");
-    if (confirm) {
-      ("https://formsubmit.co/chohyun0107@naver.com");
-    } else {
-      alert("메일 발송이 취소되었습니다.");
-    }
-  };
+  // const handleConfirm = () => {
+  //   const confirm = window.confirm("메일을 보내시겠습니까?");
+  //   if (confirm) {
+  //     ("https://formsubmit.co/chohyun0107@naver.com");
+  //   } else {
+  //     alert("메일 발송이 취소되었습니다.");
+  //   }
+  // };
 
   return (
     <div className="flex flex-col gap-5">
