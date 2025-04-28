@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import HeaderComponet from "./[component]/HeaderComp";
+//components
+import HeaderComponent from "./[component]/HeaderComp";
+import Contents from "./[component]/ContentsComp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +31,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <HeaderComponet />
-        {children}
+        <div className="w-[100%] flex flex-col items-center">
+          {/* 헤더 영역  */}
+          <HeaderComponent />
+          {/* 컨텐츠 영역  */}
+          <Contents>{children}</Contents>
+        </div>
       </body>
     </html>
   );
