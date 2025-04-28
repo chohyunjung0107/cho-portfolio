@@ -6,13 +6,7 @@ import axios from "axios";
 import { TContact } from "../api/contact/route";
 
 export function useContact() {
-  const [contactList, setContactList] = useState<TContact[]>([
-    {
-      id: 0,
-      title: "hi",
-      apiUrl: "",
-    },
-  ]);
+  const [contactList, setContactList] = useState<TContact[]>([]);
 
   useEffect(() => {
     const getData = async () => {

@@ -13,7 +13,7 @@ const contactData: TContact[] = [
     apiUrl: "/api/contact/1",
   },
   {
-    id: 1,
+    id: 2,
     title: "이메일 문의하기",
     apiUrl: "/api/contact/1",
   },

@@ -2,16 +2,8 @@
 import { TContact } from "../api/contact/route";
 import { useContact } from "../[hook]/getContact";
 
-import { useEffect, useState } from "react";
-
 export default function Page() {
-  const { contactList } = useContact() as any;
-  const [conList, setConList] = useState([]);
-
-  useEffect(() => {
-    // console.log("contactList", contactList);
-    setConList(contactList);
-  }, []);
+  const { contactList } = useContact();
 
   return (
     <>
