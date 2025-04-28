@@ -1,6 +1,10 @@
 "use client";
 import Link from "next/link";
 import { useChangeMode } from "./mode";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import IconButton from "@mui/material/IconButton";
+import NightlightIcon from "@mui/icons-material/Nightlight";
+import LightModeIcon from "@mui/icons-material/LightMode";
 
 const routers = [
   { href: "/", name: "Home" },
@@ -27,21 +31,25 @@ export default function HeaderComponent() {
 
       {/* 오른쪽 메뉴 */}
       <div className="pr-5">
-        <ul className="flex  h-[7vh] gap-4 justify-center items-center">
+        <ul className="flex  h-[7vh] gap-2 justify-center items-center">
           <li>검색</li>
           <li>
-            <button
-              className="cursor-pointer"
+            <IconButton
+              aria-label="github"
+              color="primary"
               onClick={() => {
                 window.open("https://github.com/chohyunjung0107/cho-portfolio");
               }}
+              sx={{ borderRadius: "10px", border: "1px solid #c9c9c9" }}
             >
-              깃허브
-            </button>
+              <GitHubIcon />
+            </IconButton>
           </li>
           <li>
-            <button
-              className="cursor-pointer"
+            <IconButton
+              aria-label="mode"
+              color="primary"
+              sx={{ borderRadius: "10px", border: "1px solid #c9c9c9" }}
               onClick={() => {
                 setMode((prev) => {
                   if (prev === "light") {
@@ -56,8 +64,8 @@ export default function HeaderComponent() {
                 });
               }}
             >
-              {mode === "light" ? "Light" : "Dark"}
-            </button>
+              {mode === "light" ? <LightModeIcon /> : <NightlightIcon />}
+            </IconButton>
           </li>
         </ul>
       </div>

@@ -4,7 +4,7 @@ export default function Page() {
       <iframe
         src="https://grizzly-fortnight-871.notion.site/ebd/1dd2a4f73ebf80eeb633de6a1d401fe5"
         width="100%"
-        height="800"
+        height="750"
       />
     </div>
   );

@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+//외부 lib
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+// or `v1X-appRouter` if you are using Next.js v1X
+
 //components
 import HeaderComponent from "./[component]/HeaderComp";
 import Contents from "./[component]/ContentsComp";
@@ -32,10 +36,21 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="flex flex-col items-center md:max-lg:w-[1024px]  sm:max-md:w-[768px] ">
+          <div className="bg-blue-600 w-full text-white h-[50px] flex justify-center items-center">
+            <h3>
+              🔧해당 포트폴리오는 Next.js14 프레임워크를 사용하였고 Vercel로
+              배포하였습니다
+            </h3>
+          </div>
+
           {/* 헤더 영역  */}
           <HeaderComponent />
           {/* 컨텐츠 영역  */}
-          <Contents>{children}</Contents>
+          <Contents>
+            <AppRouterCacheProvider options={{ key: "css" }}>
+              {children}
+            </AppRouterCacheProvider>
+          </Contents>
         </div>
       </body>
     </html>
