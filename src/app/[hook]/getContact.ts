@@ -5,7 +5,7 @@ import axios from "axios";
 
 import { TContact } from "../api/contact/route";
 
-export async function getContact() {
+export function useContact() {
   const [contactList, setContactList] = useState<TContact[]>([
     {
       id: 0,
@@ -16,15 +16,13 @@ export async function getContact() {
 
   useEffect(() => {
     const getData = async () => {
-      await axios
-        .get("http://localhost:3000/api/contact")
-        .then((res) => {
-          console.log("res", res.data);
-          setContactList(res.data);
-        })
-        .catch((err) => {
-          console.log("err", err);
-        });
+      try {
+        const res = await axios.get("http://localhost:3000/api/contact");
+        console.log("res", res.data);
+        setContactList(res.data);
+      } catch (err) {
+        console.log("err", err);
+      }
     };
 
     getData();

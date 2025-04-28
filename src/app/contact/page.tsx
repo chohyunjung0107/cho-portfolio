@@ -1,11 +1,11 @@
 "use client";
 import { TContact } from "../api/contact/route";
-import { getContact } from "../[hook]/getContact";
+import { useContact } from "../[hook]/getContact";
 
 import { useEffect, useState } from "react";
 
 export default function Page() {
-  const { contactList } = getContact() as any;
+  const { contactList } = useContact() as any;
   const [conList, setConList] = useState([]);
 
   useEffect(() => {
@@ -18,14 +18,14 @@ export default function Page() {
       <h2>contact</h2>
 
       {/* ------ 리스트 ------ */}
-      {/* {conList &&
-        conList.map((data: TContact) => {
+      {contactList &&
+        contactList.map((data: TContact) => {
           return (
             <div key={data.id}>
               <h3>{data.title}</h3>
             </div>
           );
-        })} */}
+        })}
     </>
   );
 }
