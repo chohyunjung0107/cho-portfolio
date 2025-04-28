@@ -12,7 +12,6 @@ export function useContact() {
     const getData = async () => {
       try {
         const res = await axios.get("/api/contact");
-        console.log("res", res.data);
         setContactList(res.data);
       } catch (err) {
         console.log("err", err);

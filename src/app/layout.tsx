@@ -27,11 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="w-[100%] flex flex-col items-center">
+        <div className="flex flex-col items-center md:max-lg:w-[1024px]  sm:max-md:w-[768px] ">
           {/* 헤더 영역  */}
           <HeaderComponent />
           {/* 컨텐츠 영역  */}
