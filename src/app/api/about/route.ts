@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 
-export type TAbout = {};
+export type TAbout = {
+  id: string;
+  title: string;
+  content: string;
+};
 
 const aboutData: TAbout[] = [
   {
