@@ -11,7 +11,7 @@ export function useContact() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/contact");
+        const res = await axios.get("/api/contact");
         console.log("res", res.data);
         setContactList(res.data);
       } catch (err) {
